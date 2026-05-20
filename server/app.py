@@ -727,9 +727,9 @@ def respond_to_invite(team_id, invite_id):
     """Accept or reject a join request (team member only)"""
 
     team_res = supabase.table("users").select("team_id").eq("id", get_current_user_id()).single().execute()
-    if (team_res.data or {}).get("team_id") != team_id:
-        return jsonify({"error": "Unauthorized"}), 403
     try:
+        if (team_res.data or {}).get("team_id") != team_id:
+            return jsonify({"error": "Unauthorized"}), 403
         data = request.get_json()
         action = data.get("action")  # "accept" or "reject"
 
@@ -753,6 +753,19 @@ def respond_to_invite(team_id, invite_id):
             return jsonify({"error": "Invite already resolved"}), 409
 
         user_id = invite_res.data["user_id"]
+
+        if action == "accept":
+            members_res = (
+                supabase.table("users")
+                .select("id")
+                .eq("team_id", team_id)
+                .execute()
+            )
+
+            current_members = len(members_res.data or [])
+
+            if current_members >= 4:
+                return jsonify({"error": "Team is already full (max 4 members)"}), 400
 
         # Mark invite resolved
         supabase.table("team_invites").update({

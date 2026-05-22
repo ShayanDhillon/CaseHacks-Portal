@@ -133,7 +133,9 @@ export default function BountiesDrawer({ open, onClose }) {
                 >
                   {b.completed
                     ? <CheckCircle2 className="w-5 h-5" />
-                    : '🎯'
+                    : b.type === 'manual'
+                      ? <Trophy className="w-5 h-5" />
+                      : '🎯'
                   }
                 </div>
 
@@ -164,8 +166,14 @@ export default function BountiesDrawer({ open, onClose }) {
                     color: 'var(--primary)',
                   }}
                 >
-                  <Trophy className="w-3 h-3" />
-                  +{b.points}
+                  {b.type === 'manual' ? (
+                    `$${b.points}`
+                  ) : (
+                    <>
+                      <Trophy className="w-3 h-3" />
+                      +{b.points}
+                    </>
+                  )}
                 </div>
               </div>
             ))

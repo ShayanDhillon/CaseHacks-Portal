@@ -15,7 +15,8 @@ import {
   LogOut,
   Bell,
   Check,
-  X
+  X,
+  Linkedin
 } from 'lucide-react';
 import Loading from '../components/Loading';
 import { useAuth } from '../contexts/AuthContext';
@@ -502,6 +503,23 @@ export default function Teams() {
                               {member.name}
                               {member.email === userEmail && ' (You)'}
                             </h3>
+                            {member.linkedin && member.linkedin.includes('linkedin') && (
+                              <a
+                                href={member.linkedin.startsWith('http') ? member.linkedin : `https://${member.linkedin}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                title="LinkedIn profile"
+                                className="flex-shrink-0 hover:opacity-80 transition-opacity"
+                              >
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2" xmlns="http://www.w3.org/2000/svg">
+                                  <rect width="24" height="24" rx="4" fill="#0A66C2"/>
+                                  <path d="M7.5 9.5H5V19H7.5V9.5Z" fill="white"/>
+                                  <circle cx="6.25" cy="6.75" r="1.5" fill="white"/>
+                                  <path d="M19 19H16.5V14C16.5 12.9 15.85 12.25 15 12.25C14.15 12.25 13.5 12.9 13.5 14V19H11V9.5H13.5V10.75C14.05 9.95 15.05 9.5 16 9.5C17.75 9.5 19 10.75 19 13V19Z" fill="white"/>
+                                </svg>
+                              </a>
+                            )}
+
                           </div>
                           <p className="text-sm mt-1" style={{ color: 'var(--foreground)', opacity: 0.6 }}>
                             {member.email}

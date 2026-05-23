@@ -243,7 +243,7 @@ export default function Teams() {
   };
 
   const handleLeaveTeam = async () => {
-    if (!user?.id) return;
+    /*if (!user?.id) return;
     const confirmed = window.confirm('Are you sure you want to leave your team?');
     if (!confirmed) return;
 
@@ -269,7 +269,11 @@ export default function Teams() {
     } catch (err) {
       setMessage({ type: 'error', text: 'Something went wrong.' });
     }
-    setLeavingTeam(false);
+    setLeavingTeam(false);*/
+    setMessage({ 
+      type: 'error', 
+      text: 'Team leaving is disabled, teams are locked for the duration of the event.' 
+    });
   };
 
   const handleRequestJoin = async (teamId, teamName) => {
@@ -415,15 +419,11 @@ export default function Teams() {
  
               <button
                 onClick={handleLeaveTeam}
-                disabled={leavingTeam}
                 className="h-fit p-3 rounded-xl transition-all hover:bg-red-100"
                 style={{ backgroundColor: 'var(--button)' }}
-                title="Leave team"
+                title="Team leaving is disabled"
               >
-                {leavingTeam
-                  ? <Loader2 className="w-5 h-5 animate-spin text-red-500" />
-                  : <LogOut className="w-5 h-5 text-red-500" />
-                }
+                <LogOut className="w-5 h-5 text-red-500 opacity-40" />
               </button>
             </div>
           </div>

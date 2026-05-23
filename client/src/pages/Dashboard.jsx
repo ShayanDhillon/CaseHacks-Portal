@@ -28,7 +28,7 @@ export default function Dashboard() {
   // For now, using test user email - replace with auth context
   //const userEmail = session?.user?.email || "test.hacker@casehacks.ca";
 
-  const deadline = new Date("2026-05-24T17:00:00-04:00").getTime();
+  const deadline = new Date("2026-05-24T10:00:00-04:00").getTime();
 
   const updateCountdown = () => {
     const now = Date.now();

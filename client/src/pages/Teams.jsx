@@ -765,7 +765,7 @@ Hang tight, and we'll have you sorted out soon. Thanks for your patience!</p>
                         style={{ backgroundColor: 'var(--button)', color: 'var(--foreground)' }}
                       >
                         <UserPlus className="w-4 h-4" />
-                        Joining Closed
+                        Joining Closed - Team matching underway!
                       </button>
                     )}
                   </div>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Clock, ExternalLink, Bell, Users, CheckCircle, Trophy, Maximize2  } from 'lucide-react';
+import { Clock, ExternalLink, Bell, Users, CheckCircle, Trophy, Maximize2, ClockAlert  } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
 import { useAuth } from '../contexts/AuthContext';
 import Loading from '../components/Loading'; 
@@ -208,19 +208,42 @@ export default function Dashboard() {
       </header>
 
       {/* Announcements Banner */}
-      {announcements.length > 0 && (
-        <div 
-          className="rounded-xl p-4 flex items-start space-x-3 border"
-          style={{ backgroundColor: 'var(--primary)', borderColor: 'var(--primary)' }}
-        >
-          <Bell className="w-5 h-5 text-white mt-0.5 shrink-0" />
-          <div>
-            <p className="text-white font-medium">{announcements[0]?.message}</p>
-            <p className="text-white/70 text-sm mt-1">
-              {announcements[0]?.users?.name || "Organizer"} • {new Date(announcements[0]?.created_at).toLocaleString()}
-            </p>
+      {true && (
+          <div style={{
+            background: 'linear-gradient(135deg, #1a0533 0%, #2d0a5e 50%, #1a0533 100%)',
+            borderRadius: '12px',
+            padding: '2rem 2.5rem',
+            position: 'relative',
+            overflow: 'hidden',
+            border: '1px solid rgba(180,100,255,0.3)',
+          }}>
+            {/* Decorative blobs */}
+            <div style={{ position: 'absolute', top: -40, right: -40, width: 200, height: 200, borderRadius: '50%', background: 'rgba(140,60,255,0.15)' }} />
+            <div style={{ position: 'absolute', bottom: -60, left: -20, width: 160, height: 160, borderRadius: '50%', background: 'rgba(255,80,120,0.1)' }} />
+
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              {/* Live pill */}
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(255,80,120,0.2)', border: '1px solid rgba(255,80,120,0.4)', borderRadius: 999, padding: '4px 14px', marginBottom: '1rem' }}>
+                <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#ff5078', display: 'inline-block' }} />
+                <span style={{ fontSize: 12, fontWeight: 500, color: '#ff8fa8', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Live Event</span>
+              </div>
+
+              <p style={{ fontSize: 32, fontWeight: 500, color: 'rgba(255,255,255,0.9)', margin: '0 0 0.75rem', lineHeight: 1.5 }}>
+                ‼️ Fireside Chat happening with Scotia Bank's CIO{' '}
+                <strong style={{ color: '#c084fc' }}>Sebastian Blandizzi</strong>
+              </p>
+
+              <p style={{ fontSize: '3rem', fontWeight: 800, color: '#fff', margin: 0, lineHeight: 1.1, letterSpacing: '-0.02em' }}>
+                4:00 <span style={{ color: '#c084fc' }}>PM</span>
+              </p>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: '0.75rem' }}>
+                <span style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.6)' }}>📍</span>
+                <span style={{ fontSize: '1.25rem', fontWeight: 600, color: 'rgba(255,255,255,0.85)', letterSpacing: '0.04em' }}>LH1009</span>
+              </div>
+            </div>
           </div>
-        </div>
+
       )}
 
       {/* Countdown & QR Code Section */}

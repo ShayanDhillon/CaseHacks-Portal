@@ -278,7 +278,8 @@ export default function Teams() {
 
   const handleRequestJoin = async (teamId, teamName) => {
     if (!user?.id) return;
-    setJoiningTeam(teamId);
+    setMessage({ type: 'error', text: 'Joining teams is now disabled. The competition is under way.' });
+    /*setJoiningTeam(teamId);
     try {
       const response = await fetch(`${API_URL}/api/team/${teamId}/invites`, {
         method: 'POST',
@@ -298,11 +299,13 @@ export default function Teams() {
     } catch (err) {
       setMessage({ type: 'error', text: 'Something went wrong.' });
     }
-    setJoiningTeam(null);
+    setJoiningTeam(null);*/
   };
 
   const handleRespondToInvite = async (inviteId, userId, action) => {
-    setRespondingInvite(inviteId);
+    setMessage({ type: 'error', text: 'Joining teams is now disabled. The competition is under way.' });
+    return
+    /*setRespondingInvite(inviteId);
     try {
       const response = await fetch(`${API_URL}/api/team/${userTeam.id}/invites/${inviteId}`, {
         method: 'PUT',
@@ -325,7 +328,7 @@ export default function Teams() {
     } catch (err) {
       setMessage({ type: 'error', text: 'Something went wrong.' });
     }
-    setRespondingInvite(null);
+    setRespondingInvite(null);*/
   };
 
   // Joinable teams: open, not the user's own, matching search
@@ -384,6 +387,12 @@ export default function Teams() {
               </div>
               <h2 className="text-3xl font-bold" style={{ color: 'var(--foreground)' }}>
                 {userTeam.name}
+
+                <p className="text-xl pt-5" style={{color: 'red'}}> If your team has members sitting at 0 points, meaning they haven't shown up to the event, don't worry! 
+
+We're actively working on rematching you with participants who are here and ready to go.
+
+Hang tight, and we'll have you sorted out soon. Thanks for your patience!</p>
               </h2>
               {userTeam.looking_for && (
                 <p className="mt-2" style={{ color: 'var(--foreground)', opacity: 0.7 }}>
@@ -752,15 +761,11 @@ export default function Teams() {
                     ) : (
                       <button
                         onClick={() => handleRequestJoin(team.id, team.name)}
-                        disabled={joiningTeam === team.id}
-                        className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-white font-medium transition-all hover:opacity-90 disabled:opacity-50"
-                        style={{ backgroundColor: 'var(--primary)' }}
+                        className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-medium cursor-not-allowed opacity-50"
+                        style={{ backgroundColor: 'var(--button)', color: 'var(--foreground)' }}
                       >
-                        {joiningTeam === team.id ? (
-                          <><Loader2 className="w-4 h-4 animate-spin" />Sending...</>
-                        ) : (
-                          <><UserPlus className="w-4 h-4" />Request to Join</>
-                        )}
+                        <UserPlus className="w-4 h-4" />
+                        Joining Closed
                       </button>
                     )}
                   </div>

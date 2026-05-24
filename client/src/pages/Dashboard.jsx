@@ -208,6 +208,14 @@ export default function Dashboard() {
       </header>
 
       {/* Announcements Banner */}
+      <p className="text-white bg-indigo-900/50 px-3 py-2 rounded-lg text-2xl font-bold">
+        <Bell className="w-4 h-4 inline-block mr-1" />
+        Please check the{' '}
+        <a href="https://discord.gg/3EKXVPCGX" target="_blank" rel="noopener noreferrer" className="text-amber-300 underline underline-offset-2 hover:text-amber-200 transition-colors">
+          discord
+        </a>
+        {' '}for presentation times
+      </p>
       {true && (
         <div style={{
           background: 'linear-gradient(135deg, #1a0505 0%, #4a0e0e 50%, #1a0505 100%)',
@@ -228,9 +236,15 @@ export default function Dashboard() {
               <span style={{ fontSize: 12, fontWeight: 500, color: '#ff9090', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Upcoming Event</span>
             </div>
 
-            <p style={{ fontSize: 18, fontWeight: 500, color: 'rgba(255,255,255,0.85)', margin: '0 0 0.4rem', lineHeight: 1.4 }}>
-              Fireside Chat with Capital Markets & Wealth Management Teams
+            <p style={{ fontSize: 24, fontWeight: 500, color: 'rgba(255,255,255,0.85)', margin: '0 0 0.4rem', lineHeight: 1.4 }}>
+              UPDATED TIME OF EVENT!
             </p>
+
+            <p style={{ fontSize: 18, fontWeight: 500, color: 'rgba(255,255,255,0.85)', margin: '0 0 0.4rem', lineHeight: 1.4 }}>
+              Fireside Chat with Capital Markets & Wealth Management Teams 
+            </p>
+            
+            
             <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)', margin: '0 0 1.25rem', lineHeight: 1.5 }}>
               Get direct access to Scotiabank's Principal Director of AI & Innovation - AI strategy across Global Wealth, Banking & Capital Markets
             </p>
@@ -240,12 +254,12 @@ export default function Dashboard() {
             </p>
 
             <p style={{ fontSize: '3rem', fontWeight: 800, color: '#fff', margin: 0, lineHeight: 1.1, letterSpacing: '-0.02em' }}>
-              4:00 <span style={{ color: '#ff7070' }}>PM</span>
+              ‼️ 1:30 <span style={{ color: '#ff7070' }}>PM</span>
             </p>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: '0.75rem' }}>
               <span style={{ fontSize: '1.1rem' }}>📍</span>
-              <span style={{ fontSize: '1.25rem', fontWeight: 600, color: 'rgba(255,255,255,0.85)', letterSpacing: '0.04em' }}>LH1009</span>
+              <span style={{ fontSize: '1.25rem', fontWeight: 600, color: 'rgba(255,255,255,0.85)', letterSpacing: '0.04em' }}>LH1010</span>
             </div>
           </div>
         </div>

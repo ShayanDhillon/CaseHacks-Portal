@@ -209,41 +209,46 @@ export default function Dashboard() {
 
       {/* Announcements Banner */}
       {true && (
-          <div style={{
-            background: 'linear-gradient(135deg, #1a0533 0%, #2d0a5e 50%, #1a0533 100%)',
-            borderRadius: '12px',
-            padding: '2rem 2.5rem',
-            position: 'relative',
-            overflow: 'hidden',
-            border: '1px solid rgba(180,100,255,0.3)',
-          }}>
-            {/* Decorative blobs */}
-            <div style={{ position: 'absolute', top: -40, right: -40, width: 200, height: 200, borderRadius: '50%', background: 'rgba(140,60,255,0.15)' }} />
-            <div style={{ position: 'absolute', bottom: -60, left: -20, width: 160, height: 160, borderRadius: '50%', background: 'rgba(255,80,120,0.1)' }} />
+        <div style={{
+          background: 'linear-gradient(135deg, #1a0505 0%, #4a0e0e 50%, #1a0505 100%)',
+          borderRadius: '12px',
+          padding: '2rem 2.5rem',
+          position: 'relative',
+          overflow: 'hidden',
+          border: '1px solid rgba(220,60,60,0.35)',
+        }}>
+          {/* Decorative blobs */}
+          <div style={{ position: 'absolute', top: -40, right: -40, width: 200, height: 200, borderRadius: '50%', background: 'rgba(220,50,50,0.18)' }} />
+          <div style={{ position: 'absolute', bottom: -60, left: -20, width: 160, height: 160, borderRadius: '50%', background: 'rgba(255,120,60,0.12)' }} />
 
-            <div style={{ position: 'relative', zIndex: 1 }}>
-              {/* Live pill */}
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(255,80,120,0.2)', border: '1px solid rgba(255,80,120,0.4)', borderRadius: 999, padding: '4px 14px', marginBottom: '1rem' }}>
-                <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#ff5078', display: 'inline-block' }} />
-                <span style={{ fontSize: 12, fontWeight: 500, color: '#ff8fa8', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Live Event</span>
-              </div>
+          <div style={{ position: 'relative', zIndex: 1 }}>
+            {/* Live pill */}
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(220,50,50,0.25)', border: '1px solid rgba(220,50,50,0.45)', borderRadius: 999, padding: '4px 14px', marginBottom: '1rem' }}>
+              <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#ff4444', display: 'inline-block', animation: 'pulse 1.4s ease-in-out infinite' }} />
+              <span style={{ fontSize: 12, fontWeight: 500, color: '#ff9090', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Upcoming Event</span>
+            </div>
 
-              <p style={{ fontSize: 32, fontWeight: 500, color: 'rgba(255,255,255,0.9)', margin: '0 0 0.75rem', lineHeight: 1.5 }}>
-                ‼️ Fireside Chat happening with Scotia Bank's CIO{' '}
-                <strong style={{ color: '#c084fc' }}>Sebastian Blandizzi</strong>
-              </p>
+            <p style={{ fontSize: 18, fontWeight: 500, color: 'rgba(255,255,255,0.85)', margin: '0 0 0.4rem', lineHeight: 1.4 }}>
+              Fireside Chat with Capital Markets & Wealth Management Teams
+            </p>
+            <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)', margin: '0 0 1.25rem', lineHeight: 1.5 }}>
+              Get direct access to Scotiabank's Principal Director of AI & Innovation - AI strategy across Global Wealth, Banking & Capital Markets
+            </p>
 
-              <p style={{ fontSize: '3rem', fontWeight: 800, color: '#fff', margin: 0, lineHeight: 1.1, letterSpacing: '-0.02em' }}>
-                4:00 <span style={{ color: '#c084fc' }}>PM</span>
-              </p>
+            <p style={{ fontSize: 22, fontWeight: 500, color: 'rgba(255,255,255,0.9)', margin: '0 0 0.5rem', lineHeight: 1.4 }}>
+              Happening with <strong style={{ color: '#ff7070' }}>Gautham Pallapa</strong>
+            </p>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: '0.75rem' }}>
-                <span style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.6)' }}>📍</span>
-                <span style={{ fontSize: '1.25rem', fontWeight: 600, color: 'rgba(255,255,255,0.85)', letterSpacing: '0.04em' }}>LH1009</span>
-              </div>
+            <p style={{ fontSize: '3rem', fontWeight: 800, color: '#fff', margin: 0, lineHeight: 1.1, letterSpacing: '-0.02em' }}>
+              4:00 <span style={{ color: '#ff7070' }}>PM</span>
+            </p>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: '0.75rem' }}>
+              <span style={{ fontSize: '1.1rem' }}>📍</span>
+              <span style={{ fontSize: '1.25rem', fontWeight: 600, color: 'rgba(255,255,255,0.85)', letterSpacing: '0.04em' }}>LH1009</span>
             </div>
           </div>
-
+        </div>
       )}
 
       {/* Countdown & QR Code Section */}

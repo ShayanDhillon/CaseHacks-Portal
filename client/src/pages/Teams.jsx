@@ -388,11 +388,7 @@ export default function Teams() {
               <h2 className="text-3xl font-bold" style={{ color: 'var(--foreground)' }}>
                 {userTeam.name}
 
-                <p className="text-xl pt-5" style={{color: 'red'}}> If your team has members sitting at 0 points, meaning they haven't shown up to the event, don't worry! 
-
-We're actively working on rematching you with participants who are here and ready to go.
-
-Hang tight, and we'll have you sorted out soon. Thanks for your patience!</p>
+                <p className="text-xl pt-5" style={{color: 'red'}}> Teams Are Finalized</p>
               </h2>
               {userTeam.looking_for && (
                 <p className="mt-2" style={{ color: 'var(--foreground)', opacity: 0.7 }}>
